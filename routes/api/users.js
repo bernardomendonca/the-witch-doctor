@@ -18,7 +18,7 @@ const User = require("../../models/User");
 // @access public
 router.get("/test", (req, res) => res.json());
 
-// @route GET api/users/register
+// @route POST api/users/register
 // @desc Register user
 // @access public
 router.post("/register", (req, res) => {
