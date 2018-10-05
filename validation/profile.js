@@ -5,6 +5,7 @@ module.exports = function validateProfileInput(data) {
   let errors = {};
 
   data.handle = !isEmpty(data.handle) ? data.handle : "";
+  data.status = !isEmpty(data.status) ? data.status : "";
 
   if (!Validator.isLength(data.handle, { min: 2, max: 40 })) {
     errors.handle = "Handle needs to be between 2 and 40 characters";
@@ -14,10 +15,8 @@ module.exports = function validateProfileInput(data) {
     errors.handle = "Profile Handle is required";
   }
 
-  if (!isEmpty(data.website)) {
-    if (!Validator.isURL(data.website)) {
-      errors.website = "Not a valid URL";
-    }
+  if (Validator.isEmpty(data.status)) {
+    errors.status = "Status field is required";
   }
 
   if (!isEmpty(data.facebook)) {
