@@ -30,7 +30,7 @@ class Profiles extends Component {
       <div className="profiles">
         <div className="container">
           <div className="row">
-            <div className="col-md-10 mx-auto">
+            <div className="col-md-8 mx-auto">
               <h1 className="display-4 text-center">Healers Profiles</h1>
               <p className="lead text-center">Get to know other healers</p>
               {profileItems}

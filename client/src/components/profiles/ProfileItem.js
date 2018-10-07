@@ -7,27 +7,24 @@ class ProfileItem extends Component {
   render() {
     const { profile } = this.props;
 
+    var cardStyle = {
+      width: "300px"
+    };
+
     return (
-      <div className="card card-body bg-light mb-3">
-        <div className="row">
-          <div className="col-2">
-            <img src={profile.user.avatar} alt="" className="rounded-circle" />
-          </div>
-          <div className="col-lg-6 col-md-4 col-8">
-            <h3>{profile.user.name}</h3>
-            <p>{profile.status} </p>
-            <p>
-              {isEmpty(profile.location) ? null : (
-                <span>{profile.location}</span>
-              )}
-            </p>
-            <p>
-              <Link to={`/profile/${profile.handle}`} className="btn btn-info">
-                View Profile
-              </Link>
-            </p>
-          </div>
-          <div className="col-md-4 d-none d-md-bl" />
+      <div className="card" style={cardStyle}>
+        <img className="card-img-top" src={profile.user.avatar} alt="" />
+        <div className="card-body">
+          <h4 className="card-title">{profile.user.name}</h4>
+          <p className="card-text">{profile.status}</p>
+          <p>
+            {isEmpty(profile.location) ? null : <span>{profile.location}</span>}
+          </p>
+          <p>
+            <Link to={`/profile/${profile.handle}`} className="btn btn-info">
+              View Profile
+            </Link>
+          </p>
         </div>
       </div>
     );
