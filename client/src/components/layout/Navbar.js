@@ -79,6 +79,11 @@ class Navbar extends Component {
                   Healers
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/feed">
+                  Recipes
+                </Link>
+              </li>
             </ul>
             {isAuthenticated ? authLinks : guestLinks}
           </div>

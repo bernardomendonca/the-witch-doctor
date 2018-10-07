@@ -27,20 +27,31 @@ class Dashboard extends Component {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
-          <div>
-            <p className="lead text-muted">
-              Welcome{" "}
-              <Link to={`/profile/${profile.handle}`}> {user.name} </Link>{" "}
-            </p>
-            <ProfileActions />
-            {/* TODO: Experience (?) */}
-            <div style={{ marginBottom: "60px" }} />
-            <button
-              onClick={this.onDeleteClick.bind(this)}
-              className="btn btn-danger"
-            >
-              Delete My Account
-            </button>
+          <div className="row">
+            <div className="col-md-6">
+              <div className="card border-dark mx-auto">
+                <div className="card-header">DASHBOARD</div>
+                <div className="card-body text-dark">
+                  <p className="card-text">
+                    <p className="lead text-muted">
+                      Welcome{" "}
+                      <Link to={`/profile/${profile.handle}`}>
+                        {" "}
+                        {user.name}{" "}
+                      </Link>{" "}
+                    </p>
+                    <ProfileActions />
+                    <div style={{ marginBottom: "60px" }} />
+                    <button
+                      onClick={this.onDeleteClick.bind(this)}
+                      className="btn btn-danger"
+                    >
+                      Delete My Account
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         );
       } else {
@@ -61,10 +72,7 @@ class Dashboard extends Component {
       <div className="dashboard">
         <div className="container">
           <div className="row">
-            <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
-              {dashboardContent}
-            </div>
+            <div className="col-md-12">{dashboardContent}</div>
           </div>
         </div>
       </div>
